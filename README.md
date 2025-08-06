@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Auth0 Authentication System
 
-## Getting Started
+This project was developed as a technical assignment for a potential employer.  
+It demonstrates a modern authentication and authorization system using Next.js, Auth0, and NextAuth.js.
+All code comments and this README file are in english. The UI language is turkish.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Next.js 14+ (App Router)
+- TypeScript & Tailwind CSS for modern UI
+- Auth0 + NextAuth.js (OAuth) user authentication
+- JWT-based session management
+- Route protection with Middleware
+- Clean code following SOLID principles & 12-Factor methodology
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Setup & Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone the repository**
+    ```bash
+    git clone https://github.com/<your-username>/next-auth.git
+    cd next-auth
+    ```
 
-## Learn More
+2. **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **Create a `.env.local` file**
+    ```env
+    AUTH0_CLIENT_ID=...
+    AUTH0_CLIENT_SECRET=...
+    AUTH0_ISSUER=...
+    NEXTAUTH_URL=http://localhost:3000
+    NEXTAUTH_SECRET=...
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Start the development server**
+    ```bash
+    npm run dev
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Usage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Go to the main page and log in via Auth0.
+- After successful login, you will see a link to the "Protected Area".
+- The `/protected` page is only accessible to authenticated users.
+- Use the "Sign Out" button to log out.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Creating a Test User
+
+- In the Auth0 Dashboard, go to **User Management > Users**.
+- Create a test user (with email and password) for login testing.
+
+---
+
+## Technical Notes
+
+- All authentication and session management is handled via NextAuth and Auth0.
+- Route protection for `/protected` is implemented using Next.js Middleware and JWT.
+- The project structure follows SOLID and 12-Factor App principles.
+- Tailwind CSS is used for basic UI styling.
+
+---
+
+## Commit & Pull Request Process
+
+- All development took place on the `dev/v1.0.0` branch.
+- After adding this README, a pull request will be opened and merged into `prod/v1.0.0`.
